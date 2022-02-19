@@ -1,0 +1,14 @@
+.letterBlock {
+    border: solid black;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+
+}
