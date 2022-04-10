@@ -1,4 +1,5 @@
 import "./letterBlock.css";
+import React from "react";
 
 export const LetterBlock = ({ index, letter }) => {
   return (

@@ -1,4 +1,11 @@
+import { Button } from "@mui/material";
+import React from "react";
 import "./userInput.css";
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  console.log("submitted");
+};
 
 export const UserInput = () => {
   return (
@@ -7,7 +14,9 @@ export const UserInput = () => {
         Guess:
         <input type="text" name="guess" />
       </label>
-      <input type="submit" value="submit" />
+      <Button onClick={handleSubmit} type="submit" value="submit">
+        SUBMIT
+      </Button>
     </form>
   );
 };
