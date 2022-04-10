@@ -16,6 +16,7 @@ export const App = () => {
           <LetterBlock key={index} letter={letter} />
         ))}
       </div>
+
       <UserInput />
     </>
   );

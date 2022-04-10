@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, FormControl, Input, InputLabel } from "@mui/material";
 import React from "react";
 import "./userInput.css";
 
@@ -9,14 +9,13 @@ const handleSubmit = (event) => {
 
 export const UserInput = () => {
   return (
-    <form className="guessForm">
-      <label>
-        Guess:
-        <input type="text" name="guess" />
-      </label>
+    <FormControl className="guessForm">
+      <InputLabel>Guess:</InputLabel>
+
+      <Input id="guess-input" type="text" name="guess" />
       <Button onClick={handleSubmit} type="submit" value="submit">
         SUBMIT
       </Button>
-    </form>
+    </FormControl>
   );
 };
