@@ -3,8 +3,8 @@ import { LetterBlock } from "./Components/LetterBlock/letterBlock";
 import { UserInput } from "./Components/UserInput/UserInput";
 
 export const App = () => {
-  const word = "bootcamp";
-  const wordArray = word.split("");
+  const word = "racing";
+  const wordArray = word.toUpperCase().split("");
 
   const gameContext = React.useContext("");
 
