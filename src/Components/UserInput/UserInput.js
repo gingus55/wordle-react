@@ -1,11 +1,10 @@
 import { Button, FormControl, Input, InputLabel } from "@mui/material";
-import { createEvent } from "@testing-library/dom";
 import React from "react";
 import "./userInput.css";
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log("submitted");
+  console.log(event.target.value);
 };
 
 const handleValue = (event) => {
@@ -19,7 +18,7 @@ export const UserInput = () => {
       <InputLabel>Guess:</InputLabel>
 
       <Input onChange={handleValue} id="guess-input" type="text" name="guess" />
-      <Button onClick={handleSubmit} type="submit" value="submit">
+      <Button onClick={handleSubmit} type="submit">
         SUBMIT
       </Button>
     </FormControl>

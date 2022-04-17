@@ -6,7 +6,9 @@ export const App = () => {
   const word = "racing";
   const wordArray = word.toUpperCase().split("");
 
-  const gameContext = React.useContext("");
+  console.log(wordArray);
+
+  // const gameContext = React.useContext("");
 
   return (
     <>
