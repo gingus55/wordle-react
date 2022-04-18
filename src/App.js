@@ -19,7 +19,7 @@ export const App = () => {
         ))}
       </div>
 
-      <UserInput />
+      <UserInput actual={{ wordArray }} />
     </>
   );
 };
