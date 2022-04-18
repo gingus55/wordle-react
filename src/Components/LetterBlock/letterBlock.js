@@ -1,10 +1,10 @@
 import "./letterBlock.css";
 import React from "react";
 
-export const LetterBlock = ({ index, letter }) => {
+export const LetterBlock = ({ letter, color }) => {
   return (
-    <div className="letterBlock" key={index}>
-      {/* {letter} */}
+    <div className="letterBlock" style={{ background: color }}>
+      {letter}
     </div>
   );
 };
