@@ -23,8 +23,6 @@ export const UserInput = (actual) => {
     } else if ((guess.length = actualLength)) {
       const guessArray = guess[guess.length - 1];
       console.log(guessArray);
-    } else {
-      alert("too looongg");
     }
   };
   return (
