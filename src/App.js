@@ -1,4 +1,5 @@
 import React from "react";
+import { GuessBlock } from "./Components/GuessBlock/guessBlock";
 import { LetterBlock } from "./Components/LetterBlock/letterBlock";
 import { UserInput } from "./Components/UserInput/UserInput";
 
@@ -18,7 +19,7 @@ export const App = () => {
           <LetterBlock key={index} letter={letter} />
         ))}
       </div>
-
+      <GuessBlock word={wordArray} />
       <UserInput actual={{ wordArray }} />
     </>
   );
