@@ -14,11 +14,7 @@ export const App = () => {
   return (
     <>
       <div>Wordley</div>
-      <div className="container">
-        {wordArray.map((letter, index) => (
-          <LetterBlock key={index} letter={letter} />
-        ))}
-      </div>
+      <GuessBlock word={wordArray} />
       <GuessBlock word={wordArray} />
       <UserInput actual={{ wordArray }} />
     </>
