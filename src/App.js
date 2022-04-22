@@ -10,7 +10,7 @@ export const App = () => {
 
   console.log(wordArray);
 
-  const guesses = ["1", "2", "3", "4", "5", "6"];
+  const guesses = ["guess1", "guess2", "guess3", "guess4", "guess5", "guess6"];
 
   return (
     <>

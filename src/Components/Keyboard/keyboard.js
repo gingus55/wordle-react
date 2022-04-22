@@ -33,10 +33,24 @@ export const Keyboard = () => {
     "Enter",
   ];
 
+  let word = [];
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    const letter = event.currentTarget.textContent;
+    word.push(letter);
+    console.log(word);
+  };
+
   return (
     <div className="key-container">
       {keys.map((letter, index) => (
-        <button key={index} className={letter} letter={letter}>
+        <button
+          onClick={handleClick}
+          key={index}
+          className={letter}
+          letter={letter}
+        >
           {letter}
         </button>
       ))}
