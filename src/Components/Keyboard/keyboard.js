@@ -36,7 +36,7 @@ export const Keyboard = () => {
   return (
     <div className="key-container">
       {keys.map((letter, index) => (
-        <button key={index} letter={letter}>
+        <button key={index} className={letter} letter={letter}>
           {letter}
         </button>
       ))}
