@@ -1,6 +1,7 @@
 import React from "react";
 import { GuessBlock } from "./Components/GuessBlock/guessBlock";
 import { Keyboard } from "./Components/Keyboard/keyboard";
+import { Title } from "./Components/Title/title";
 import { UserInput } from "./Components/UserInput/UserInput";
 
 export const App = () => {
@@ -9,13 +10,14 @@ export const App = () => {
 
   console.log(wordArray);
 
-  // const gameContext = React.useContext("");
+  const guesses = ["1", "2", "3", "4", "5", "6"];
 
   return (
     <>
-      <div>Wordley</div>
-      <GuessBlock word={wordArray} />
-      <GuessBlock word={wordArray} />
+      <Title />
+      {guesses.map((letter) => (
+        <GuessBlock word={wordArray} key={letter} />
+      ))}
       <UserInput actual={{ wordArray }} />
       <Keyboard />
     </>
