@@ -1,5 +1,6 @@
 import React from "react";
 import { GuessBlock } from "./Components/GuessBlock/guessBlock";
+import { Keyboard } from "./Components/Keyboard/keyboard";
 import { UserInput } from "./Components/UserInput/UserInput";
 
 export const App = () => {
@@ -16,6 +17,7 @@ export const App = () => {
       <GuessBlock word={wordArray} />
       <GuessBlock word={wordArray} />
       <UserInput actual={{ wordArray }} />
+      <Keyboard />
     </>
   );
 };
