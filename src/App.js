@@ -15,8 +15,8 @@ export const App = () => {
   return (
     <>
       <Title />
-      {guesses.map((letter) => (
-        <GuessBlock word={wordArray} key={letter} />
+      {guesses.map((guess) => (
+        <GuessBlock word={wordArray} key={guess} data={guess} />
       ))}
       <UserInput actual={{ wordArray }} />
       <Keyboard />

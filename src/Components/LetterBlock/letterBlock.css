@@ -12,3 +12,13 @@
   display: flex;
   margin-top: 20px;
 }
+
+.guess1,
+.guess2,
+.guess3,
+.guess4,
+.guess5,
+.guess6 {
+  display: flex;
+  margin-top: 20px;
+}

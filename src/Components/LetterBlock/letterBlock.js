@@ -1,9 +1,9 @@
 import "./letterBlock.css";
 import React from "react";
 
-export const LetterBlock = ({ index, letter, guess }) => {
+export const LetterBlock = ({ letter, data, guess }) => {
   return (
-    <div className="letterBlock" key={index}>
+    <div className="letterBlock" data={data}>
       {guess}
     </div>
   );
