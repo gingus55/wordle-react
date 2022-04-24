@@ -6,7 +6,7 @@ export const GuessBlock = ({ word, data }) => {
   return (
     <div className={data}>
       {word.map((letter, index) => (
-        <LetterBlock key={index} letter={letter} data={index} />
+        <LetterBlock key={index} letter={letter} data={index} row={data} />
       ))}
     </div>
   );

@@ -2,10 +2,14 @@ let word = [];
 
 const putLetterInGuess = (letter) => {
   console.log(`put ${letter} in block`);
+  getCurrentGuessBlock(letter);
 };
 
-const getCurrentGuessBlock = () => {
-  console.log("this is the guess block you are looking for");
+const getCurrentGuessBlock = (letter) => {
+  const block = document.getElementById("letterBlock0guess1");
+  block.textContent = letter;
+  console.log(block);
+  console.log(`this is where you want ${letter}`);
 };
 
 export const handleLetterClick = (event) => {
