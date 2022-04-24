@@ -1,5 +1,6 @@
 import "./keyboard.css";
 import React from "react";
+import { handleLetterClick } from "../../GameLogic/logic";
 
 export const Keyboard = () => {
   const keys = [
@@ -33,20 +34,11 @@ export const Keyboard = () => {
     "Enter",
   ];
 
-  let word = [];
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    const letter = event.currentTarget.textContent;
-    word.push(letter);
-    console.log(word);
-  };
-
   return (
     <div className="key-container">
       {keys.map((letter, index) => (
         <button
-          onClick={handleClick}
+          onClick={handleLetterClick}
           key={index}
           className={letter}
           letter={letter}
