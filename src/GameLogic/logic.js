@@ -18,7 +18,6 @@ const getCurrentGuessBlock = (letter) => {
     currentBlock.textContent = letter;
     word.push(letter);
 
-    //   guess++;
     block++;
   } else {
     console.log("limit reached");
@@ -34,7 +33,21 @@ const handleDelClick = () => {
   word.pop();
 };
 
+const validateLetters = (word) => {
+  console.log(`validating ${word}`);
+};
+
 const handleEnterClick = () => {
+  if (word.length === 6) {
+    validateLetters(word);
+    guess++;
+    block = 0;
+    word = [];
+  } else {
+    alert("not enough characters");
+  }
+  console.log(word);
+
   console.log("Enter has been clicked");
 };
 
@@ -42,6 +55,4 @@ export const handleLetterClick = (event) => {
   event.preventDefault();
   const letter = event.currentTarget.textContent;
   putLetterInGuess(letter);
-
-  console.log(word);
 };
