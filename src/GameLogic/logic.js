@@ -1,4 +1,6 @@
 let word = [];
+let guess = 1;
+let block = 0;
 
 const putLetterInGuess = (letter) => {
   console.log(`put ${letter} in block`);
@@ -6,10 +8,17 @@ const putLetterInGuess = (letter) => {
 };
 
 const getCurrentGuessBlock = (letter) => {
-  const block = document.getElementById("letterBlock0guess1");
-  block.textContent = letter;
-  console.log(block);
-  console.log(`this is where you want ${letter}`);
+  if (letter === "Del") {
+    console.log("delete");
+  } else if (block < 6) {
+    const wantedBlock = `letterBlock${block}guess${guess}`;
+    const currentBlock = document.getElementById(wantedBlock);
+    currentBlock.textContent = letter;
+    //   guess++;
+    block++;
+  } else {
+    console.log("limit reached");
+  }
 };
 
 export const handleLetterClick = (event) => {
