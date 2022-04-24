@@ -27,6 +27,11 @@ const getCurrentGuessBlock = (letter) => {
 
 const handleDelClick = () => {
   console.log("Del has been clicked");
+  block--;
+  const wantedBlock = `letterBlock${block}guess${guess}`;
+  const currentBlock = document.getElementById(wantedBlock);
+  currentBlock.textContent = "";
+  word.pop();
 };
 
 const handleEnterClick = () => {
