@@ -28,12 +28,16 @@ const getCurrentGuessBlock = (letter) => {
 };
 
 const handleDelClick = () => {
-  console.log("Del has been clicked");
-  block--;
-  const wantedBlock = `letterBlock${block}guess${guess}`;
-  const currentBlock = document.getElementById(wantedBlock);
-  currentBlock.textContent = "";
-  word.pop();
+  if (block > 0) {
+    console.log("Del has been clicked");
+    block--;
+    const wantedBlock = `letterBlock${block}guess${guess}`;
+    const currentBlock = document.getElementById(wantedBlock);
+    currentBlock.textContent = "";
+    word.pop();
+  } else {
+    console.log("nothing to delete");
+  }
 };
 
 const validateLetters = (word) => {
