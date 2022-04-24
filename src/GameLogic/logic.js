@@ -1,3 +1,6 @@
+const original = "racing";
+export const wordArray = original.toUpperCase().split("");
+
 let word = [];
 let guess = 1;
 let block = 0;
