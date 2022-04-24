@@ -2,7 +2,6 @@ import React from "react";
 import { GuessBlock } from "./Components/GuessBlock/guessBlock";
 import { Keyboard } from "./Components/Keyboard/keyboard";
 import { Title } from "./Components/Title/title";
-import { UserInput } from "./Components/UserInput/UserInput";
 
 export const App = () => {
   const word = "racing";
@@ -18,7 +17,6 @@ export const App = () => {
       {guesses.map((guess) => (
         <GuessBlock word={wordArray} key={guess} data={guess} />
       ))}
-      <UserInput actual={{ wordArray }} />
       <Keyboard />
     </>
   );
