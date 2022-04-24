@@ -9,11 +9,15 @@ const putLetterInGuess = (letter) => {
 
 const getCurrentGuessBlock = (letter) => {
   if (letter === "Del") {
-    console.log("delete");
+    handleDelClick();
+  } else if (letter === "Enter") {
+    handleEnterClick();
   } else if (block < 6) {
     const wantedBlock = `letterBlock${block}guess${guess}`;
     const currentBlock = document.getElementById(wantedBlock);
     currentBlock.textContent = letter;
+    word.push(letter);
+
     //   guess++;
     block++;
   } else {
@@ -21,11 +25,18 @@ const getCurrentGuessBlock = (letter) => {
   }
 };
 
+const handleDelClick = () => {
+  console.log("Del has been clicked");
+};
+
+const handleEnterClick = () => {
+  console.log("Enter has been clicked");
+};
+
 export const handleLetterClick = (event) => {
   event.preventDefault();
   const letter = event.currentTarget.textContent;
-  word.push(letter);
-  console.log(word);
-
   putLetterInGuess(letter);
+
+  console.log(word);
 };
