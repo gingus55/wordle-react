@@ -1,25 +1,21 @@
 import React from "react";
-import { LetterBlock } from "./Components/LetterBlock/letterBlock";
-import { UserInput } from "./Components/UserInput/UserInput";
+import { GuessBlock } from "./Components/GuessBlock/guessBlock";
+import { Keyboard } from "./Components/Keyboard/keyboard";
+import { Title } from "./Components/Title/title";
+import { wordArray } from "./GameLogic/logic";
 
 export const App = () => {
-  const word = "racing";
-  const wordArray = word.toUpperCase().split("");
-
   console.log(wordArray);
 
-  // const gameContext = React.useContext("");
+  const guesses = ["guess1", "guess2", "guess3", "guess4", "guess5", "guess6"];
 
   return (
     <>
-      <div>Wordley</div>
-      <div className="container">
-        {wordArray.map((letter, index) => (
-          <LetterBlock key={index} letter={letter} />
-        ))}
-      </div>
-
-      <UserInput />
+      <Title />
+      {guesses.map((guess) => (
+        <GuessBlock word={wordArray} key={guess} data={guess} />
+      ))}
+      <Keyboard />
     </>
   );
 };
