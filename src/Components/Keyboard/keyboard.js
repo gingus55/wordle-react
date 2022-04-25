@@ -1,7 +1,6 @@
 import "./keyboard.css";
 import React from "react";
 import { handleLetterClick } from "../../GameLogic/logic";
-import { __esModule } from "@testing-library/jest-dom/dist/matchers";
 
 export const Keyboard = () => {
   
