@@ -40,13 +40,27 @@ const handleDelClick = () => {
   }
 };
 
-const validateLetters = (word) => {
+const validateLetters = (word, guess) => {
   console.log(`validating ${word}`);
+  word.map((letter, index) => {
+    const included = wordArray.includes(letter);
+    const placed = wordArray.includes(letter, index);
+    console.log(guess);
+
+    if (included && placed) {
+      // colour green
+    }
+    if (included && !placed) {
+      // colour yellow
+    } else {
+      return;
+    }
+  });
 };
 
 const handleEnterClick = () => {
   if (word.length === 6) {
-    validateLetters(word);
+    validateLetters(word, guess);
     guess++;
     block = 0;
     word = [];
