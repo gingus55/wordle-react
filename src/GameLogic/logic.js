@@ -14,7 +14,7 @@ const getCurrentGuessBlock = (letter) => {
     handleDelClick();
   } else if (letter === "Enter") {
     handleEnterClick();
-  } else if (block < 6) {
+  } else if (block < wordArray.length) {
     const wantedBlock = `letterBlock${block}guess${guess}`;
     const currentBlock = document.getElementById(wantedBlock);
     currentBlock.textContent = letter;
@@ -56,6 +56,7 @@ const validateLetters = (word, guess) => {
 
 const validateRealWord = async (word) => {
   const joined = word.join("");
+  console.log(joined);
   const html = `https://api.dictionaryapi.dev/api/v2/entries/en/${joined}`;
   const handleResponse = function(response) {
     if (response.status !== 200) {
@@ -66,12 +67,18 @@ const validateRealWord = async (word) => {
   };
 
   const handleData = function(data) {
+    console.log(data);
     const resultWord = data[0].word;
-    console.log(resultWord);
+    if (resultWord) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   const handleError = function(error) {
     console.log(error);
+    return false;
   };
   await fetch(html)
     .then(handleResponse)
@@ -81,7 +88,7 @@ const validateRealWord = async (word) => {
 
 const handleEnterClick = async () => {
   if (word.length === wordArray.length) {
-    const real = await validateRealWord(word);
+    let real = await validateRealWord(word);
     console.log(real);
     validateLetters(word, guess);
     guess++;
