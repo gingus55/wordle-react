@@ -43,13 +43,16 @@ const handleDelClick = () => {
 const validateLetters = (word, guess) => {
   console.log(`validating ${word}`);
   word.map((letter, index) => {
+    console.log(letter, index);
+    console.log(wordArray);
     const included = wordArray.includes(letter);
-    const placed = wordArray.includes(letter, index);
-    console.log(guess);
+    const placed = wordArray[index] === letter;
+    console.log(placed);
     const wantedBg = `letterBlock${index}guess${guess}`;
     const bkGround = document.getElementById(wantedBg);
 
     if (included && placed) {
+      console.log("right place");
       bkGround.style.backgroundColor = "green";
     } else if (included && !placed) {
       // colour yellow
