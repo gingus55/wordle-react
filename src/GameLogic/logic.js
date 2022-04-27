@@ -46,14 +46,18 @@ const validateLetters = (word, guess) => {
     const included = wordArray.includes(letter);
     const placed = wordArray.includes(letter, index);
     console.log(guess);
+    const wantedBg = `letterBlock${index}guess${guess}`;
+    const bkGround = document.getElementById(wantedBg);
 
     if (included && placed) {
-      // colour green
-    }
-    if (included && !placed) {
+      bkGround.style.backgroundColor = "green";
+    } else if (included && !placed) {
       // colour yellow
+      console.log("in the word");
+      bkGround.style.backgroundColor = "yellow";
     } else {
-      return;
+      console.log("not in the word");
+      bkGround.style.backgroundColor = "grey";
     }
   });
 };
