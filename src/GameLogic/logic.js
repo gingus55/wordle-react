@@ -6,7 +6,6 @@ let guess = 1;
 let block = 0;
 
 const putLetterInGuess = (letter) => {
-  console.log(`put ${letter} in block`);
   getCurrentGuessBlock(letter);
 };
 
@@ -29,7 +28,6 @@ const getCurrentGuessBlock = (letter) => {
 
 const handleDelClick = () => {
   if (block > 0) {
-    console.log("Del has been clicked");
     block--;
     const wantedBlock = `letterBlock${block}guess${guess}`;
     const currentBlock = document.getElementById(wantedBlock);
@@ -41,25 +39,17 @@ const handleDelClick = () => {
 };
 
 const validateLetters = (word, guess) => {
-  console.log(`validating ${word}`);
   word.map((letter, index) => {
-    console.log(letter, index);
-    console.log(wordArray);
     const included = wordArray.includes(letter);
     const placed = wordArray[index] === letter;
-    console.log(placed);
     const wantedBg = `letterBlock${index}guess${guess}`;
     const bkGround = document.getElementById(wantedBg);
 
     if (included && placed) {
-      console.log("right place");
       bkGround.style.backgroundColor = "green";
     } else if (included && !placed) {
-      // colour yellow
-      console.log("in the word");
       bkGround.style.backgroundColor = "yellow";
     } else {
-      console.log("not in the word");
       bkGround.style.backgroundColor = "grey";
     }
   });
@@ -78,7 +68,7 @@ const validateRealWord = async (word) => {
 
   const handleData = function(data) {
     const resultWord = data[0].word;
-    return resultWord;
+    console.log(resultWord);
   };
 
   const handleError = function(error) {
@@ -101,9 +91,6 @@ const handleEnterClick = async () => {
   } else {
     alert("not enough characters");
   }
-  console.log(word);
-
-  console.log("Enter has been clicked");
 };
 
 export const handleLetterClick = (event) => {
