@@ -77,28 +77,23 @@ const validateRealWord = async (word) => {
   };
 
   const handleData = function(data) {
-    console.log(data);
+    const resultWord = data[0].word;
+    return resultWord;
   };
 
   const handleError = function(error) {
     console.log(error);
   };
-
-  const result = await fetch(html)
+  await fetch(html)
     .then(handleResponse)
     .then(handleData)
     .catch(handleError);
-
-  console.log(result);
-
-  if (result) {
-    return true;
-  }
 };
 
-const handleEnterClick = () => {
+const handleEnterClick = async () => {
   if (word.length === 6) {
-    validateRealWord(word);
+    const real = await validateRealWord(word);
+    console.log(real);
     validateLetters(word, guess);
     guess++;
     block = 0;
