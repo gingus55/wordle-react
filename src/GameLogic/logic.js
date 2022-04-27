@@ -1,4 +1,4 @@
-const original = "racing";
+const original = "shrek";
 export const wordArray = original.toUpperCase().split("");
 
 let word = [];
@@ -19,7 +19,6 @@ const getCurrentGuessBlock = (letter) => {
     const currentBlock = document.getElementById(wantedBlock);
     currentBlock.textContent = letter;
     word.push(letter);
-
     block++;
   } else {
     console.log("limit reached");
@@ -81,7 +80,7 @@ const validateRealWord = async (word) => {
 };
 
 const handleEnterClick = async () => {
-  if (word.length === 6) {
+  if (word.length === wordArray.length) {
     const real = await validateRealWord(word);
     console.log(real);
     validateLetters(word, guess);
