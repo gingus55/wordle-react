@@ -65,8 +65,40 @@ const validateLetters = (word, guess) => {
   });
 };
 
+const validateRealWord = async (word) => {
+  const joined = word.join("");
+  const html = `https://api.dictionaryapi.dev/api/v2/entries/en/${joined}`;
+  const handleResponse = function(response) {
+    if (response.status !== 200) {
+      throw new Error("Something went wrong");
+    }
+
+    return response.json();
+  };
+
+  const handleData = function(data) {
+    console.log(data);
+  };
+
+  const handleError = function(error) {
+    console.log(error);
+  };
+
+  const result = await fetch(html)
+    .then(handleResponse)
+    .then(handleData)
+    .catch(handleError);
+
+  console.log(result);
+
+  if (result) {
+    return true;
+  }
+};
+
 const handleEnterClick = () => {
   if (word.length === 6) {
+    validateRealWord(word);
     validateLetters(word, guess);
     guess++;
     block = 0;
