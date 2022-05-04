@@ -3,49 +3,29 @@ import React from "react";
 import { handleLetterClick } from "../../GameLogic/logic";
 
 export const Keyboard = () => {
-  const keys = [
-    "Q",
-    "W",
-    "E",
-    "R",
-    "T",
-    "Y",
-    "U",
-    "I",
-    "O",
-    "P",
-    "A",
-    "S",
-    "D",
-    "F",
-    "G",
-    "H",
-    "J",
-    "K",
-    "L",
-    "Z",
-    "X",
-    "C",
-    "V",
-    "B",
-    "N",
-    "M",
-    "Del",
-    "Enter",
-  ];
+  
+  const keyRows = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
+  const backIcn = "🔙";
+  const enterTxt = "Enter";
+
+  const renderKey = (letter, key) => (
+    <button
+      onClick={handleLetterClick}
+      key={key}
+      className={letter}
+      letter={letter}
+    >
+      {letter}
+    </button>
+  );
 
   return (
     <div className="key-container">
-      {keys.map((letter, index) => (
-        <button
-          onClick={handleLetterClick}
-          key={index}
-          className={letter}
-          letter={letter}
-        >
-          {letter}
-        </button>
-      ))}
+      {keyRows.map((row, i) => {
+        const fullRow =
+          i === 2 ? [enterTxt, ...row.split(""), backIcn] : row.split("");
+        return <div className="key-row">{fullRow.map(renderKey)}</div>;
+      })}
     </div>
   );
 };

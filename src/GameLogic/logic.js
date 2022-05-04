@@ -10,7 +10,7 @@ const putLetterInGuess = (letter) => {
 };
 
 const getCurrentGuessBlock = (letter) => {
-  if (letter === "Del") {
+  if (letter === "🔙") {
     handleDelClick();
   } else if (letter === "Enter") {
     handleEnterClick();
