@@ -104,3 +104,11 @@ export const handleLetterClick = (event) => {
   const letter = event.currentTarget.textContent;
   putLetterInGuess(letter);
 };
+
+const logKey = (e) => {
+  putLetterInGuess(e.key.toUpperCase());
+  if (e.key === "Backspace") {
+    handleDelClick();
+  }
+};
+document.addEventListener("keydown", logKey);
