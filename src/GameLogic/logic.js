@@ -1,4 +1,4 @@
-const original = "shrek";
+const original = "natey";
 export const wordArray = original.toUpperCase().split("");
 
 let word = [];
